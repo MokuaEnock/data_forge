@@ -49,5 +49,5 @@ end
 
 gem "ruby-lsp", "~> 0.3.8", :group => :development
 gem "devise"
-gem "doorkeeper"
+# gem "doorkeeper"
 gem "csv"
