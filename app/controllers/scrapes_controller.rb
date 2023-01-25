@@ -1,23 +1,20 @@
 class ScrapesController < ApplicationController
-  # require "open-uri"
-  # require "nokogiri"
-
-  # def scrape
-  #   doc = Nokogiri.HTMl(open(params[:scrape]))
-  # end
-
   def index
     render json: Scrape.all
   end
 
   def create
-    scrape = Scrape.create(scrape_params)
-    render json: scrape
+    s = Scrape.create(s_params)
+    render json: s
+  end
+
+  def show
+    
   end
 
   private
 
-  def scrape_params
-    params.permit(:scrape, :pages)
+  def s_params
+    params.permit(:link, :pages)
   end
 end
