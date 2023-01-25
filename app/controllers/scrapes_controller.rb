@@ -9,7 +9,8 @@ class ScrapesController < ApplicationController
   end
 
   def show
-    
+    s = Scrape.find(params[:id])
+    render json: s
   end
 
   private
