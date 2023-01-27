@@ -13,6 +13,9 @@ class ScrapesController < ApplicationController
     render json: s
   end
 
+  def scrape_title
+    agent
+  end
   private
 
   def s_params
