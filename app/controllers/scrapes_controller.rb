@@ -1,6 +1,7 @@
 class ScrapesController < ApplicationController
 
   require 'mechanize'
+  # https://www.newegg.com/Laptops-Notebooks/Category/ID-223
 
   def index
     render json: Scrape.all
@@ -18,7 +19,10 @@ class ScrapesController < ApplicationController
 
   def scrape_title
     agent = Mechanize.new
-    page = agent.get("#")
+    page = agent.get("https://www.newegg.com/Laptops-Notebooks/Category/ID-223")
+    div_tags = page.search('div')
+    li_tags = page.search('li')
+
   end
   private
 
