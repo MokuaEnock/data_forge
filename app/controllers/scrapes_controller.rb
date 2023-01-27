@@ -1,4 +1,7 @@
 class ScrapesController < ApplicationController
+
+  require 'mechanize'
+
   def index
     render json: Scrape.all
   end
@@ -14,7 +17,8 @@ class ScrapesController < ApplicationController
   end
 
   def scrape_title
-    agent
+    agent = Mechanize.new
+    page = agent.get("#")
   end
   private
 
